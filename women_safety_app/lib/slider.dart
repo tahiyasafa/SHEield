@@ -17,16 +17,26 @@ class SliderPage extends StatelessWidget {
     _width = MediaQuery.of(context).size.width;
 
     return Container(
-      color: Colors.white,
+
+      decoration: BoxDecoration(
+        image: DecorationImage(
+
+          image: AssetImage("images/bg.png"),
+          fit: BoxFit.cover,
+        ),
+      ),
       child: Column(
+
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
 
-          Image.asset(image,),
-
+          Image.asset(image,scale: 3.00),
+          SizedBox(
+            height: 10.0,
+          ),
           Text(
             title,
-            style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold,fontFamily: 'Segoe UI',color: Colors.white),
           ),
           SizedBox(
             height: 20.0,
@@ -39,6 +49,8 @@ class SliderPage extends StatelessWidget {
                   height: 1.5,
                   fontSize: 14.0,
                   fontWeight: FontWeight.normal,
+                  fontFamily: 'Segoe UI',
+                  color: Colors.red,
                   letterSpacing: 0.7),
               textAlign: TextAlign.center,
             ),

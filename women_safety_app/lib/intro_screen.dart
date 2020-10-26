@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:intro_slider/slide_object.dart';
 import 'package:women_safety_app/slider.dart';
 import 'package:women_safety_app/wrapper.dart';
-
+import 'package:intro_slider/intro_slider.dart';
 class IntroScreen extends StatefulWidget {
   @override
   _IntroScreenState createState() => _IntroScreenState();
@@ -13,21 +14,21 @@ class _IntroScreenState extends State<IntroScreen> {
 
   List<Widget> _pages = [
     SliderPage(
-      title: "some title",
-      description: "add some description",
-      image: "images/ws1.png",
+      title: "Share Location",
+      description: "Whenver You're in trouble share your location with your trusted contacts",
+      image: "images/map_icon.png",
 
     ),
     SliderPage(
-      title: "title",
-      description: "add some description",
-      image: "images/ws1.png",
+      title: "Emergency",
+      description: "All your emergency numbers in one Place",
+      image: "images/phone_icon.png",
     ),
     SliderPage(
 
-      title: "title",
-      description: "add some description",
-      image: "images/ws1.png",
+      title: "Tips and Tricks",
+      description: "Get Tips and tricks",
+      image: "images/video_icon.png",
     ),
 
   ];
@@ -67,8 +68,8 @@ class _IntroScreenState extends State<IntroScreen> {
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(5),
                             color: (index == _currentPage)
-                                ? Colors.deepPurple
-                                : Colors.deepPurple.withOpacity(0.5)));
+                                ? Colors.red
+                                : Colors.red.withOpacity(0.5)));
                   })),
               InkWell(
                 onTap: () {
@@ -82,26 +83,27 @@ class _IntroScreenState extends State<IntroScreen> {
                   height: 70,
                   width: (_currentPage == (_pages.length - 1)) ? 200 : 75,
                   decoration: BoxDecoration(
-                      color: Colors.deepPurple,
+                      color: Colors.red,
                       borderRadius: BorderRadius.circular(35)),
                   child: (_currentPage == (_pages.length - 1))
                       ? RaisedButton (
-                    color: Colors.deepPurple,
-                      shape: RoundedRectangleBorder(
+                    color: Colors.red,
+                    shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(18.0),
-                        side: BorderSide(color: Colors.deepPurple)
-                      ),
 
-                      child: Text(
-                        "Get Started",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20.0,
+                    ),
 
-                        ),
+                    child: Text(
+                      "Get Started",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20.0,
+                        fontFamily: 'Segoe UI'
+
                       ),
+                    ),
                     onPressed: () {
-                        Navigator.push(context,
+                      Navigator.push(context,
                         MaterialPageRoute(builder: (context)=>Wrapper()),
                       );
                     },

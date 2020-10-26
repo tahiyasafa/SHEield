@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:women_safety_app/authentication/authenticate.dart';
 import 'package:women_safety_app/home/home.dart';
+import 'package:women_safety_app/home/new_home.dart';
 import 'package:women_safety_app/models/user.dart';
 
 class Wrapper extends StatelessWidget {
@@ -14,7 +15,7 @@ class Wrapper extends StatelessWidget {
     if (user ==  null) {
       return Authenticate();
     } else {
-      return Home();
+      return newHome();
     }
   }
 }

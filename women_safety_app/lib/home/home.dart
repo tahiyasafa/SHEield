@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:women_safety_app/contact/add_contact.dart';
+import 'package:women_safety_app/contact/contacts.dart';
 import 'package:women_safety_app/pages/SosPage.dart';
 import 'package:women_safety_app/pages/current_location.dart';
 import 'package:women_safety_app/pages/self_defense.dart';
@@ -20,7 +21,7 @@ class _HomeState extends State<Home> {
   final pages = [
     CurrentLocation(),
     SosPage(),
-    SelfDefense(),
+    Contacts(),
     Tips()
 
 
@@ -31,12 +32,22 @@ class _HomeState extends State<Home> {
     return WillPopScope(
       onWillPop: () => Future.value(false),
       child: Scaffold(
-        backgroundColor: Colors.purple,
+        backgroundColor: Colors.black54,
+        /*floatingActionButton:
+          FlatButton.icon(
+            icon: Icon(Icons.person),
+            label: Text('Logout'),
+            onPressed: () async {
+              await _auth.signOut();
+            },
+          ),*/
+
+
         appBar: AppBar(
           centerTitle: true,
           automaticallyImplyLeading: false,
           title: Text('Women Safety'),
-          backgroundColor: Colors.deepPurpleAccent,
+          backgroundColor: Color(0xFF010115),
           elevation: 0.0,
           actions: <Widget>[
             FlatButton.icon(
@@ -47,6 +58,7 @@ class _HomeState extends State<Home> {
               },
             ),
 
+
           ],
           leading: GestureDetector(
             onTap: () {
@@ -55,7 +67,7 @@ class _HomeState extends State<Home> {
               ));
             },
             child: Icon(
-              Icons.list,
+              Icons.menu,
               size: 20,
             ),
           ),
@@ -70,23 +82,23 @@ class _HomeState extends State<Home> {
           },
           items: [
             BottomNavigationBarItem(
-              backgroundColor: Colors.deepPurple,
+              backgroundColor: Color(0xFF010115),
               icon: Icon(Icons.place),
               title: Text(''),
 
             ),
             BottomNavigationBarItem(
-              backgroundColor: Colors.deepPurpleAccent,
+              backgroundColor: Color(0xFF010115),
               icon: Icon(Icons.touch_app),
               title: Text('SOS'),
             ),
             BottomNavigationBarItem(
-              backgroundColor: Colors.deepPurpleAccent,
+              backgroundColor: Color(0xFF010115),
               icon: Icon(Icons.transfer_within_a_station),
               title: Text('Self Defense'),
             ),
             BottomNavigationBarItem(
-              backgroundColor: Colors.deepPurple,
+              backgroundColor: Color(0xFF010115),
               icon: Icon(Icons.all_inclusive),
               title: Text('Tips'),
             ),
