@@ -1,13 +1,15 @@
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_database/ui/firebase_animated_list.dart';
 import 'package:flutter/material.dart';
-import 'add_contacts_sf.dart';
+import 'package:women_safety_app/contact/contact_home.dart';
+import 'contacts_sf.dart';
 import 'package:get_it/get_it.dart';
 import 'package:url_launcher/url_launcher.dart';
+
 class callService{
   void call(String number)=>launch("tel:$number");
 }
-class Contacts extends StatefulWidget {
+class Contactstest extends StatefulWidget {
   @override
   _ContactsState createState() => _ContactsState();
 }
@@ -136,7 +138,7 @@ class _ContactsState extends State<Contacts> {
           Navigator.push(
             context,
             MaterialPageRoute(builder: (_) {
-              return AddContacts();
+              return ContactHome();
             }),
           );
         },
@@ -162,3 +164,4 @@ class _ContactsState extends State<Contacts> {
     return color;
   }
 }
+
